@@ -8,6 +8,7 @@ int Eluno();
 int ElDos();
 
 int crearmatrix();
+void imprimirMatrix(int**);
 
 int main(){
     char ejecucion = 'y';
@@ -108,8 +109,18 @@ int a,b;
             	    }cout<<endl;
         	}
 		cout<<endl;
-
-
+		
+		if (Matrixb[SIZE-1][SIZE-1] ==  Matrixb[2][2]){
+		    for(int i=0;i<SIZE-1;i++){
+			for(int j=0;j<SIZE-1;j++){
+			    if(i==0){
+				
+			    }
+			}
+		    }
+		}else{
+		    cout<<"Listo."<<endl;
+		}
 	}
 
 
@@ -119,7 +130,47 @@ return 0;
 }
 
 
+int** createMatrix(){
+int size = 8;
+     int** retValue=new int*[size];
+     for(int i=0;i<size;i++){
+         retValue[i] = new int[size];
+     }
+     //inicializar la matriz en 0
+     for(int i=0;i<size;i++)
+      for(int j=0;j<size;j++)
+         retValue[i][j]=0;
+
+     return retValue;
+}
+
+void imprimirMatrix(int** matrix){
+int size=8;
+    for (int i=0; i<size;i++){
+       for(int j=0;j<size;j++){
+           //if(matrix[i][j] < 10)
+             cout<<" "<<matrix[i][j];
+           //else
+             //cout<<" "<<matrix[i][j];
+       }cout<<endl;
+    }
+}
+
+
+
 int ElDos(){
+ /*int** matrix = createMatrix();
+ imprimirMatrix(matrix);*/
+ int size = 8;	
+ int reversi[size][size];
+	
+	for(int i=0;i<size;i++){ 
+ 	    for(int j=0;j<size;j++){
+		
+	    }
+	}
+
+
 
 return 0;
 }
