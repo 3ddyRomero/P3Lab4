@@ -55,7 +55,8 @@ int menu(){
 
 int Eluno(){
 int SIZE; 
-int a,b;
+int a,b,pa,pb,x,y;
+int sa=0, sb=0, suma=0;
 
 	cout<<"Ingrese el tamaño de la matriz: "<<endl;
 	cin>>SIZE;
@@ -73,16 +74,16 @@ int a,b;
 	cout<<endl;
 
 	cout<<"Ingrese la coordenada(Deben ser enteros positivos):"<<endl;
-	cout<<"Nota: Las coordenadas deben ser de 1 en adelante.";
+	//cout<<"Nota: Las coordenadas deben ser de 1 en adelante.";
 	cin>>a;
 	cin>>b;
 
-	if(a>=SIZE || a<1 || b>=SIZE || b<1  ){
+	if(a>=SIZE || a<0 || b>=SIZE || b<0  ){
 		cout<<"Valor No Valido!!!"<<endl;
 	}else{
 		cout<<"Bien Hecho Joven!!  :D"<<endl;
 
-		for(int i=a-1;i<SIZE;i++){
+		for(int i=a;i<SIZE;i++){
 		    for(int j=0;j<SIZE;j++){
 			Matrix[i][j] = Matrix[i+1][j];
 			
@@ -90,7 +91,7 @@ int a,b;
 		}
 
 		for(int i=0;i<SIZE;i++){
-                    for(int j=b-1;j<SIZE;j++){
+                    for(int j=b;j<SIZE;j++){
                         Matrix[i][j] = Matrix[i][j+1];
                     }
                 }
@@ -109,14 +110,23 @@ int a,b;
             	    }cout<<endl;
         	}
 		cout<<endl;
-		
-		if (Matrixb[SIZE-1][SIZE-1] ==  Matrixb[2][2]){
-		    for(int i=0;i<SIZE-1;i++){
-			for(int j=0;j<SIZE-1;j++){
-			    if(i==0){
-				
-			    }
+		int SIZEB = SIZE-1;
+		if (Matrixb[SIZEB][SIZEB] >=  Matrixb[2][2]){
+		    for(int i=0;i<SIZEB;i++){
+			    pa=1;
+			    pb=1;
+			for(int j=0;j<SIZEB;j++){
+			    x = j+i;
+			    if(x >= SIZEB)
+				x = x-SIZEB;
+			    	pa = pa*Matrixb[j][x];
+				pb = pb*Matrixb[SIZEB-(j+1)][x];
 			}
+			sa = sa+pa;
+			sb = sb+pb;
+			suma = sa-sb;
+
+			cout<<"Determinante: "<<suma<<endl;
 		    }
 		}else{
 		    cout<<"Listo."<<endl;
