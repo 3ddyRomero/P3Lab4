@@ -125,8 +125,12 @@ int sa=0, sb=0, suma=0;
 			sa = sa+pa;
 			sb = sb+pb;
 			suma = sa-sb;
-
-			cout<<"Determinante: "<<suma<<endl;
+			
+			if(suma > 0){
+				cout<<"Determinante: "<<"+"<<suma<<endl;
+			}else{
+				cout<<"Determinante: "<<suma<<endl;
+			}
 		    }
 		}else{
 		    cout<<"Listo."<<endl;
@@ -169,8 +173,8 @@ int size=8;
 
 
 int ElDos(){
- /*int** matrix = createMatrix();
- imprimirMatrix(matrix);*/
+ int** matrix = createMatrix();
+ imprimirMatrix(matrix);
  int size = 8;	
  int reversi[size][size];
 	
