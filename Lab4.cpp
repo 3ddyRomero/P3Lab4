@@ -67,7 +67,7 @@ int sa=0, sb=0, suma=0;
 
 	for(int i=0;i < SIZE;i++){
 	    for(int j=0;j < SIZE;j++){
-		Matrix[i][j] = (rand() % 6 + 1);
+		Matrix[i][j] = (rand() % 25 + 1);
 		cout<<Matrix[i][j]<<" ";
 	    }cout<<endl;
 	}
@@ -111,7 +111,7 @@ int sa=0, sb=0, suma=0;
         	}
 		cout<<endl;
 		int SIZEB = SIZE-1;
-		if (Matrixb[SIZEB][SIZEB] >=  Matrixb[2][2]){
+		//if (Matrixb[SIZEB][SIZEB] >=  Matrixb[2][2]){
 		    for(int i=0;i<SIZEB;i++){
 			    pa=1;
 			    pb=1;
@@ -132,9 +132,9 @@ int sa=0, sb=0, suma=0;
 				cout<<"Determinante: "<<suma<<endl;
 			}
 		    }
-		}else{
+		/*}else{
 		    cout<<"Listo."<<endl;
-		}
+		}*/
 	}
 
 
@@ -163,7 +163,16 @@ int size=8;
     for (int i=0; i<size;i++){
        for(int j=0;j<size;j++){
            //if(matrix[i][j] < 10)
-             cout<<" "<<matrix[i][j];
+       	cout<<"."<<matrix[i][j];
+
+       	if(i==3 && j==3 )
+       		cout<<"R"<<matrix[i][j];
+       	if(i==4 && j==4)
+             cout<<"R"<<matrix[i][j];
+        if(i==3 && j==4)
+             cout<<"A"<<matrix[i][j];
+        if(i==4 && j==3)
+             cout<<"A"<<matrix[i][j];      
            //else
              //cout<<" "<<matrix[i][j];
        }cout<<endl;
